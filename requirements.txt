@@ -1,0 +1,2 @@
+tensorflow-addons==0.18.0
+setuptools==57.4.0
