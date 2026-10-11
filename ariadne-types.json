@@ -1,0 +1,12 @@
+{
+  "types": [
+    {
+      "module": "example/example.py",
+      "function": "",
+      "variable": "image",
+      "dtype": "uint8",
+      "shape": "512 1024 3",
+      "attribution": "tf.image.decode_jpeg of the shipped example/images/ximilar-similar.jpg (example.py:15-16), passed unresized to random_augmentations. decode_jpeg's default channels=0 takes the channel count from the file. Measured 2026-10-11 on the file at f29d0d8: a baseline JPEG, 1024x512, 3 components, 8-bit; decoded with TensorFlow 2.9.3 it is (512, 1024, 3) uint8."
+    }
+  ]
+}
