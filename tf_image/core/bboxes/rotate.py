@@ -7,7 +7,6 @@ from tf_image.core.bboxes.clip import clip_bboxes
 from tf_image.core.convert_type_decorator import convert_type
 
 
-@tf.function
 @convert_type
 def random_rotate(image, bboxes, min_rotate=-20, max_rotate=20):
     """
@@ -57,7 +56,6 @@ def random_rotate(image, bboxes, min_rotate=-20, max_rotate=20):
     return image, bboxes
 
 
-@tf.function
 def _rotate(image, bboxes, angle):
     image_height, image_width = tf.shape(image)[0], tf.shape(image)[1]
     rotate = angle * pi / 180 + tf.keras.backend.epsilon()
@@ -164,7 +162,6 @@ def _rotate_points(points, angle, image):
     return points
 
 
-@tf.function
 @convert_type
 def rot90(image, bboxes, k=(0, 1, 2, 3)):
     """

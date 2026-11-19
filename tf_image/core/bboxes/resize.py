@@ -64,7 +64,6 @@ def resize(image, bboxes, height, width, keep_aspect_ratio=True, random_method=F
     return image, bboxes
 
 
-@tf.function
 @convert_type
 def random_aspect_ratio_deformation(image, bboxes, max_squeeze=0.7, max_stretch=1.3, unify_dims=False):
     """
@@ -105,7 +104,6 @@ def random_aspect_ratio_deformation(image, bboxes, max_squeeze=0.7, max_stretch=
     return image, bboxes
 
 
-@tf.function
 @convert_type
 def random_pad_to_square(
     image, bboxes, max_extend=0.1,

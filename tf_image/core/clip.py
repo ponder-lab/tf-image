@@ -1,7 +1,6 @@
 import tensorflow as tf
 
 
-@tf.function
 def clip_random(image, min_shape):
     """
     Randomly cuts out part of the image. Useful for images with no bounding boxes. It provides additional parameter
