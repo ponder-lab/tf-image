@@ -39,7 +39,6 @@ def channel_drop(image):
     return image
 
 
-@tf.function
 @convert_type
 def rgb_shift(image, r_shift=0.0, g_shift=0.0, b_shift=0.0):
     """

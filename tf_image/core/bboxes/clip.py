@@ -4,7 +4,6 @@ from tf_image.core.clip import clip_random
 from tf_image.core.convert_type_decorator import convert_type
 
 
-@tf.function
 @convert_type
 def clip_random_with_bboxes(image, bboxes, min_shape=(1, 1)):
     """

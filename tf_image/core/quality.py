@@ -3,7 +3,6 @@ import tensorflow as tf
 from tf_image.core.convert_type_decorator import convert_type
 
 
-@tf.function
 @convert_type
 def gaussian_noise(image, stddev_max=0.1):
     """
