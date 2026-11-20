@@ -28,11 +28,11 @@ def _random_erasing(image, max_area, erased_value):
     x = tf.random.uniform([], 1, image_width - 2, dtype=tf.int32)
 
     # Functions fo calculating the size of the erased space.
-    @tf.function(input_signature=[tf.TensorSpec(shape=(), dtype=tf.int32)])
+    @tf.function(reduce_retracing=True)
     def random(max_val):
         return tf.cond(tf.greater(max_val, 1), lambda: tf.random.uniform([], 1, max_val, dtype=tf.int32), lambda: 1)
 
-    @tf.function(input_signature=[tf.TensorSpec(shape=(), dtype=tf.int32), tf.TensorSpec(shape=(), dtype=tf.int32), tf.TensorSpec(shape=(), dtype=tf.int32), tf.TensorSpec(shape=(), dtype=tf.int32)])
+    @tf.function(reduce_retracing=True)
     def get_size(center1, center2, max1, max2):
         size1 = random(tf.math.reduce_min([center1, max1 - center1, max_area]))
         size2 = random(tf.math.reduce_min([center2, max2 - center2, max_area // size1]))
