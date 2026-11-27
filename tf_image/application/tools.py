@@ -14,6 +14,7 @@ from tf_image.core.random import random_function
 from tf_image.core.random import random_function_bboxes
 
 
+@tf.function
 def random_augmentations(image, augmentation_config: AugmentationConfig, bboxes=None, prob_demanding_ops: float = 0.5):
     """
     Apply augmentations in random order.
@@ -39,7 +40,6 @@ def random_augmentations(image, augmentation_config: AugmentationConfig, bboxes=
     return image
 
 
-@tf.function
 @convert_type
 def _random_augmentations(image, bboxes, augmentation_config: AugmentationConfig, prob_demanding_ops: float):
     @tf.function
