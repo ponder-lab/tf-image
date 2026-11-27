@@ -26,6 +26,7 @@ def multiple_erase(image, bboxes, iterations=10, max_area=1.0):
     return image, bboxes
 
 
+@tf.function
 def calculate_bboxes_max_erase_area(bboxes, max_area=1.0, erase_smallest=0.5):
     """
     Calculates the the biggest area (width * height) that can be erased on an image with given bounding boxes.
